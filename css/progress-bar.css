@@ -1,0 +1,36 @@
+
+    .progress-1 .bar{background-color:transparent; color:#444}
+    .progress-2 .bar{background-color:transparent; color:#444}
+    .progress-3 .bar{background-color:transparent; color:#444}
+    .progress-4 .bar{background-color:transparent; color:#444}
+    .progress-5 .bar{background-color:transparent; color:#444}
+                                  
+    
+    .progress-1 .bar:hover {
+    background-color: lightblue;	    
+    color:currentColor;   
+    font-family: Fjalla One;
+                            }
+
+    .progress-2 .bar:hover {
+    background-color: lightcoral;	    
+    color:currentColor;    
+    font-family: Fjalla One;
+                            }
+    .progress-3 .bar:hover {
+    background-color:#F1B559 ;	
+    color:currentColor;
+    font-family: Fjalla One;
+                            }
+    .progress-4 .bar:hover {
+    background-color: #C496F0;	
+    color:currentColor;
+    font-family: Fjalla One;
+                         }
+    .progress-5 .bar:hover {
+    background-color: lightseagreen;	
+    color:currentColor;
+    font-family: Fjalla One;
+                            }
+
+    

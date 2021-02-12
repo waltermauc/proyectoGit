@@ -1,0 +1,44 @@
+button.accordion1 {
+    background-color:  rgba( 131, 126, 123, 0.877 );
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 270px;
+    border-color: #999;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+button.accordion1:hover {
+    background-color:  #719943;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 270px;
+    border-color:#719943;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+#btn20 {
+    background-color:  #8dad3d;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 270px;
+    border-color: #999;
+    text-align: center;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+button#btn20:focus {
+    background-color: #8dad3d;
+    color: white;
+}
