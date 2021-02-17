@@ -22,20 +22,13 @@
     $saldo = $_GET["csaldo"];
     $templeado = $_GET["templeado"];
     $tasa = $_GET["ttasa"];
-    $cuentaes = $_GET["estadoci"];
-    $tgarante = $_GET["garant"];
-    $valor = $_GET["evaluov"];
-    $activos = $_GET["activ"];
-    $edad = $_GET["cedad"];
-    $vivienda = $_GET["viviendac"];
     $cantidadcre = $_GET["cantidacre"];
-    $empleo = $_GET["cempleo"];
-    $empleox = $_GET["cempleox"];
+    $tipopersona = $_GET["tipopersona"]
     $tamort = $_GET["tamortizacion"];
     $cliente = $_GET["codigoclie"];
-    $garantec = $_GET["codigogara"];
+    $frecuenca =$_GET["frecuencia"];
 
-    $sqlcrear = "INSERT INTO bv_credito VALUES(null,$cantidadcre, $edad, '$vivienda', '$empleox', '$empleo','$proposito','$tamort',$meses,'$creditoh','$monto','$templeado',$tasa,'$valor','$activos',$cliente,$garantec,'$saldo','$cuentaes','$tgarante','P');";
+    $sqlcrear = "INSERT INTO bv_poliza VALUES(null,$cantidadcre, $edad, '$vivienda', '$empleox', '$empleo','$proposito','$tamort',$meses,'$creditoh','$monto','$templeado',$tasa,'$valor','$activos',$cliente,$garantec,'$saldo','$cuentaes','$tgarante','P');";
     if ($conn->query($sqlcrear) === TRUE) {
 
         $sqlid = "SELECT bv_cliente.cli_persona from bv_cliente where bv_cliente.cli_id=$cliente;";

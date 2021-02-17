@@ -196,101 +196,27 @@ if ($usurol == 'usuario') {
                         <input type='text' id='numerosc' name='numerosc' value='<?php echo $cantidadc;?>' disabled/><br><br>
                         <label for='historial'>Historial de Creditos:</label>
                         <input type='text' id='historial' name='historial' value='no se tomaron creditos'disabled/><br><br>
-                        <label for='numerosc'>Tiempo de empleado:</label> 
-                        <select id='tiempo' name='tiempo'>
-                            <option value='selecione'>SELECIONE</option>
-                            <option value='A71'>Desempleado</option>
-                            <option value='A72'>Menos de un año</option>
-                            <option value='A73'> 1 a menos de 4 años</option>
-                            <option value='A74'> 4 a menos de 7 años</option>
-                            <option value='A75'> 7 o mas años</option>
-                        </select>
-                        <label for='empcodigo'>Codigo Empleado:</label>
-                        <input type='text' id='empcodigo' name='empcodigo' value='<?php echo $id;?>' disabled />
-                        <br>
-                        <label for='telefono'>Telefono:</label>
-                        <input type='text' id='telefono' name='telefono' value='<?php echo $telefono;?>' disabled/>
-                        <br>
-                        <br>
-                        <label for='direccion'>Direccion:</label>
-                        <input type='tex' id='direccion' name='direccion' value='<?php echo $direccion;?>' disabled/>
-                        <br>
                         <br>
                         <label for='correo'>Correo:</label>
                         <input type='text' id='correo' name='correo' value='<?php echo $correo;?>' disabled/>
-                        <br>
-                        <br>
-                        <label for='sexo'>Sexo</label>
-                        <input type='text' id='sexo' name='sexo' value='<?php echo $sexo;?>' disabled/>
-                        <br>
-                        <br>
-                        <label for='estado'>Estado civil:</label>
-                        <input type='text' id='estado' name='estado' value='<?php echo $estado;?>' disabled/>;
-                        <br>
-                        <br>
-                        <label for='fechan'>Fecha Nacimiento:</label>
-                        <input type='text' id='fechan' name='fechan' value='<?php echo $fechan;?>' disabled/>
-                        <br>
-                        <br>
-                        <label for='edad'>Edad:</label>
-                        <input type='text' id='edad' name='edad' value='<?php echo $edad;?>' disabled/>
                         <br>
                         <br>
                         <label for='saldoc'>Saldo Cuenta:</label>
                         <input type='text' id='saldoc' name='saldoc' value='<?php echo $saldo;?>' disabled/>
                         </div>
                         <br>
-                        <div>
-                            <h3>Vivienda :</h3>
-                            <select id="vivienda" name="vivienda" >
-                                <option value="selecione">SELECIONE</option>
-                                <option value="A151">GRATIS</option>
-                                <option value="A152">ALQUILER</option>
-                                <option value="A153">PROPIO</option>
-                            </select>
-                        </div>
                         <br>
                         <div>
-                            <h3>Trabajador Extranjero :</h3>
-                            <select id="textranjero" name="textranjero" >
+                            <h3>Tipo de Persona :</h3>
+                            <select id="tipodepersona" name="tipodepersona" >
                                 <option value="selecione">SELECIONE</option>
-                                <option value="A201">SI</option>
-                                <option value="A202">NO</option>
+                                <option value="natural">NATURAL</option>
+                                <option value="juridica">JURIDICA</option>
                             </select>
                         </div>
-                        <div>
-                            <h3>Empleado :</h3>
-                            <select id="trabajo" name="trabajo" >
-                                <option value="selecione">SELECIONE</option>
-                                <option value="A171">DESEEMBLEADO</option>
-                                <option value="A172">JUBILADO</option>
-                                <option value="A173">EMPLEADO</option>
-                                <option value="A174">AUTONOMO</option>
-                            </select>
-                        </div>
-                        <br>
-                        <div>
-                            <h3>Activos :</h3>
-                            <select id="activos" name="activos" >
-                                <option value="selecione">SELECIONE</option>
-                                <option value="A121">Bienes inmuebles</option>
-                                <option value="A122">Seguro de vida y plan de construccion</option>
-                                <option value="A123">Automovil</option>
-                                <option value="A124">Sin propiedad</option>
-                            </select>
-                            </div>
-                            <br>
+                       
                             <div>
-                                <h3><label for="cedulag">Valor de la Casa:</label></h3>
-                                <input type="text" id="valor" name="valor" value=""  pattern="[0-9]{3,6}" title="Monto mínimo: 100. Tamaño máximo: 100000" style="border-color:#C9D0CC" required=""/>
-                                <br>
-                                <br>
-                                <h3><label for="mcredito">Monto de Credito:</label></h3>
-                                <input type="text" id="mcredito" name="mcredito" value="" pattern="[0-9]{3,6}" title="Monto mínimo: 100. Tamaño máximo: 100000" style="border-color:#C9D0CC" required="" />  
-                            </div>
-                            <br>
-                            <div>
-                                <h3>Proposito Credito :</h3>
+                                <h3>Producto :</h3>
                                 <select id="pcredito" name="pcredito" >
                                     <option value="selecione">SELECIONE</option>
                                     <option value="A40">INMUEBLES</option>
@@ -308,7 +234,7 @@ if ($usurol == 'usuario') {
                             </div>
                             <br>
                             <div>
-                                <h3>Tipo de credito :</h3>
+                                <h3>Tipo de Credito :</h3>
                                 <select id="tcredito" name="tcredito" >
                                     <option value="selecione">SELECIONE</option>
                                     <option value="14.99">Credito de Consumo</option>
@@ -319,13 +245,13 @@ if ($usurol == 'usuario') {
                              </div>
                             <br>
                             <div>
-                                <h3>Tipo de amortizacion:</h3>
-                                <select id="amortizacion" name="amortizacion" >
-                                    <option value="selecione">SELECIONE</option>
-                                    <option value="alemana">ALEMANA</option>
-                                    <option value="francesa">FRANCESA</option>
-                                </select>
                             </div>
+                            <br>
+                            <div>
+                                <h3><label for="mcredito">Monto:</label></h3>
+                                <input type="text" id="mcredito" name="mcredito" value="" pattern="[0-9]{3,6}" title="Monto mínimo: 100. Tamaño máximo: 100000" style="border-color:#C9D0CC" required="" />  
+                            </div>
+                            <br>
                             <br>
                             <div>
                                 <h3>Meses :</h3>
@@ -363,6 +289,15 @@ if ($usurol == 'usuario') {
                                 </select>
                                 </div>
                                 <br>
+                             <div>
+                             <h3>Frecuencia de Pagos :</h3>
+                                <select id="frecuencia" name="frecuencia" >
+                                    <option value="selecione">SELECIONE</option>
+                                    <option value="mensual">Mensual</option>
+                                    <option value="anual">Anual</option>
+                                    </select>
+                                </div>
+                                <br>
                                 <div>
                                     <label for="ced">Subir Cedula</label>
                                     <input id="guardarcedula" name="guardarcedula" type="file" value="Subir Cedula">&nbsp;
@@ -378,19 +313,6 @@ if ($usurol == 'usuario') {
                                     
                                 </div>
                                 <br>
-                                <script>
-                                function activarcg(){
-                                    var d1 = document.getElementById("garante");
-                                    var distext = d1.options[d1.selectedIndex].value;
-
-                                    if (distext == "A102" || distext == "A103") { 
-                                        document.getElementById("cedulagd").style.visibility='visible';   
-                                    }else{    
-                                        document.getElementById("cedulagd").style.visibility='hidden'; 
-                                    }
-
-                                }
-                                </script>
                                 <script>
                                 function buscarUsuariocg(){
                                     var cedu = document.getElementById("cedulag").value;
@@ -435,10 +357,14 @@ if ($usurol == 'usuario') {
                                     }else if(historialc == 'cuenta critica / otros creitos existentes (no en este banco)'){
                                         historialci = "A34";
                                     }
+                                    var tipopersona = document.getElementById("tipodepersona").value;
+                                    var tipoper = tipopersona.options[fre.selectedIndex].value;
                                     //4
                                     var pc = document.getElementById("pcredito");
                                     var propositoc = pc.options[pc.selectedIndex].value;
                                     //5
+                                    var fre = document.getElementById("frecuencia").value;
+                                    var frecuencias = fre.options[fre.selectedIndex].value;
                                     var montoc = document.getElementById("mcredito").value;
     
                                     //6
@@ -461,57 +387,9 @@ if ($usurol == 'usuario') {
                                     //8
                                     var tp = document.getElementById("tcredito");
                                     var tasap = tp.options[tp.selectedIndex].value;
-    
-                                    //9
-                                    var estadoci = document.getElementById("estado").value; 
-                                    var sexo = document.getElementById("sexo").value;
-                                    var estadociv = "";
-                                    if (sexo == "MASCULINO"){
-                                        if (estadoci == "DIVORCIADO/A" ||  estadoci == "SEPARADO/A"){
-                                            estadociv = "A91";
-                                        }else if(estadoci == "SOLTERO/A"){
-                                            estadociv = "A93";
-                                        }else if(estadoci == "CASADO/A" || estadoci == "VIUDO/A"){
-                                            estadociv = "A94";
-                                        }
-                                    }else if( sexo == "FEMENINO"){
-                                        if (estadoci == "DIVORCIADO/A" ||  estadoci == "SEPARADO/A" || estadoci =="CASADO/A" ){
-                                            estadociv = "A92";
-                                        }else if(estadoci == "SOLTERO/A"){
-                                            estadociv = "A95";
-                                        }
-                                    }
-
-                                    //10
-                                    var gt = document.getElementById("garante");
-                                    var tgarante = gt.options[gt.selectedIndex].value;
-                                    //11
-                                    var evaluvi = document.getElementById("valor").value;
-                                    //12
-                                    var ac = document.getElementById("activos");
-                                    var activos = ac.options[ac.selectedIndex].value;
-                                    //13  
-                                    var edad = document.getElementById("edad").value;
-                                    //14
-                                    var vd = document.getElementById("vivienda");
-                                    var vivienda = vd.options[vd.selectedIndex].value;
+                                    
                                     //15
                                     var cantidacr = document.getElementById("numerosc").value;
-                                    //16
-                                    var em = document.getElementById("trabajo");
-                                    var empleo = em.options[em.selectedIndex].value;
-                                    //17
-                                    var emx = document.getElementById("textranjero");
-                                    var empleox = emx.options[emx.selectedIndex].value;
-                                    //////18
-                                    var am = document.getElementById("amortizacion");
-                                    var amortizaciont = am.options[am.selectedIndex].value;
-                                    /////19
-                                    //var codigoemp = document.getElementById("cedulaem").value;
-                                    //20
-                                    var codigocli = document.getElementById("empcodigo").value;
-                                    //21
-                                    var codigogarr = document.getElementById("codigogar").value;
                                     
 
                                     if (window.XMLHttpRequest) {
@@ -521,12 +399,11 @@ if ($usurol == 'usuario') {
                                     }
                                     xmlhttp.onreadystatechange = function() {
                                         if (this.readyState == 4 && this.status == 200) {
-                                            alert("SE HA CREADO EL CREDITO");
+                                            alert("SE HA CREADO LA SOLICITUD");
                                              //document.getElementById("informa").innerHTML = this.responseText;
                                         }};  
-                                    xmlhttp.open("GET", "GuardarCredito.php?pmeses=" + plazomeses + "&hcredito=" + historialci+ "&pcredito="+ propositoc+"&cmonto=" + montoc+ "&csaldo=" + saldocui+"&templeado=" + tiempoem+"&ttasa=" + tasap+"&estadoci="+ estadociv+"&garant=" + tgarante+ "&evaluov=" + evaluvi+"&activ=" + activos+ "&cedad=" + edad+"&viviendac=" +vivienda+"&cantidacre=" + cantidacr+ "&cempleo=" +empleo+"&cempleox=" +empleox+"&tamortizacion=" + amortizaciont+"&codigoclie=" +codigocli+ "&codigogara=" +codigogarr, true);
+                                    xmlhttp.open("GET", "GuardarCredito.php?pmeses=" + plazomeses + "&hcredito=" + historialci+ "&pcredito="+ propositoc+ "&csaldo="+ saldocui+"&templeado=" + tiempoem+"&ttasa=" + tasap+"&cantidacre="+ cantidacr+"&tamortizacion=" + "ALEMAN"+ "$codigoclie"+$codigoui +"&cmonto=" + montoc+"$frecuencia"+frecuencias+"$tipopersona"+tipoper, true);
                                     xmlhttp.send();
-
 
                                     return false;
                                 }
