@@ -200,6 +200,9 @@ if ($usurol == 'usuario') {
                         <label for='correo'>Correo:</label>
                         <input type='text' id='correo' name='correo' value='<?php echo $correo;?>' disabled/>
                         <br>
+                        <label for='empcodigo'>Codigo Empleado:</label>
+                        <input type='text' id='empcodigo' name='empcodigo' value='<?php echo $id;?>' disabled />
+                        <br>
                         <br>
                         <label for='saldoc'>Saldo Cuenta:</label>
                         <input type='text' id='saldoc' name='saldoc' value='<?php echo $saldo;?>' disabled/>
@@ -357,15 +360,16 @@ if ($usurol == 'usuario') {
                                     }else if(historialc == 'cuenta critica / otros creitos existentes (no en este banco)'){
                                         historialci = "A34";
                                     }
-                                    var tipopersona = document.getElementById("tipodepersona").value;
-                                    var tipoper = tipopersona.options[fre.selectedIndex].value;
+                                    var tipopersona = document.getElementById("tipodepersona");
+                                    var tipoper = tipopersona.options[tipopersona.selectedIndex].value;
                                     //4
                                     var pc = document.getElementById("pcredito");
                                     var propositoc = pc.options[pc.selectedIndex].value;
                                     //5
-                                    var fre = document.getElementById("frecuencia").value;
+                                    var fre = document.getElementById("frecuencia");
                                     var frecuencias = fre.options[fre.selectedIndex].value;
                                     var montoc = document.getElementById("mcredito").value;
+                                    var codigocli = document.getElementById("empcodigo").value;
     
                                     //6
                                     var saldocu = document.getElementById("saldoc").value
@@ -382,8 +386,7 @@ if ($usurol == 'usuario') {
                                         saldocui = "A65";
                                     }
                                     //7
-                                    var tm = document.getElementById("tiempo");
-                                    var tiempoem = tm.options[tm.selectedIndex].value; 
+                                   
                                     //8
                                     var tp = document.getElementById("tcredito");
                                     var tasap = tp.options[tp.selectedIndex].value;
@@ -402,7 +405,7 @@ if ($usurol == 'usuario') {
                                             alert("SE HA CREADO LA SOLICITUD");
                                              //document.getElementById("informa").innerHTML = this.responseText;
                                         }};  
-                                    xmlhttp.open("GET", "GuardarCredito.php?pmeses=" + plazomeses + "&hcredito=" + historialci+ "&pcredito="+ propositoc+ "&csaldo="+ saldocui+"&templeado=" + tiempoem+"&ttasa=" + tasap+"&cantidacre="+ cantidacr+"&tamortizacion=" + "ALEMAN"+ "$codigoclie"+$codigoui +"&cmonto=" + montoc+"$frecuencia"+frecuencias+"$tipopersona"+tipoper, true);
+                                    xmlhttp.open("GET", "GuardarCredito.php?pmeses=" + plazomeses + "&hcredito=" + historialci+ "&pcredito="+ propositoc+ "&csaldo="+ saldocui+"&ttasa=" + tasap+"&cantidacre="+ cantidacr+"&tamortizacion=" + "ALEMAN"+ "$codigoclie"+codigocli +"&cmonto=" + montoc+"$frecuencia"+frecuencias+"$tipopersona"+tipoper, true);
                                     xmlhttp.send();
 
                                     return false;

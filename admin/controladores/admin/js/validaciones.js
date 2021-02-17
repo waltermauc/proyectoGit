@@ -1,60 +1,21 @@
 function validarCamposObligatorios() {
-    var bandera = false
-    var banderav = false
-    var banderac = false
-    var banderae = false
-    var banderaf = false
-    for (var i = 0; i < document.forms[0].elements.length - 2; i++) {
-        var elemento = document.forms[0].elements[i]
-        if (elemento.value == '' && (elemento.type == 'text' || elemento.type == 'password')) {
-            if (elemento.id == 'cedula') {
-                document.getElementById('mensajeCedula').innerHTML = '<br>La cedula esta vacía'
-            } else if (elemento.id == 'nombres') {
-                document.getElementById('mensajeNombres').innerHTML = '<br>Los nombres estan vacíos'
-            } else if (elemento.id == 'apellidos') {
-                document.getElementById('mensajeApellidos').innerHTML = '<br>Los apellidos estan vacíos'
-            } else if (elemento.id == 'direccion') {
-                document.getElementById('mensajeDireccion').innerHTML = '<br>La dirección esta vacía'
-            } else if (elemento.id == 'telefono') {
-                document.getElementById('mensajeTelefono').innerHTML = '<br>El telefono está vacío'
-            } else if (elemento.id == 'fechaNacimiento') {
-                document.getElementById('mensajeFechaNacimiento').innerHTML = '<br>La fecha de nacimiento esta vacía'
-            } else if (elemento.id == 'correo') {
-                document.getElementById('mensajeCorreo').innerHTML = '<br>El correo esta vacío'
-            } else if (elemento.id == 'contrasena') {
-                document.getElementById('mensajeContrasena').innerHTML = '<br>La contraseña esta vacía'
-            }
-            elemento.style.border = "1px red solid"
-            banderav = true
-        }
+    var bandera = true
+    for (var i = 0; i < document.forms[0].elements.length; i++) {
+      var elemento = document.forms[0].elements[i]
+      if (elemento.value == '' && elemento.type == 'text') {
         if (elemento.id == 'cedula') {
-            if (valCedula(elemento.id) == true) {
-                banderac = true
-            } else {
-                elemento.style.border = "1px red solid"
-            }
+          document.getElementById('mensajeCedula').innerHTML = '<br> Campo obligatorio'
         }
-        if (elemento.id == 'correo') {
-            if (valCorreo(elemento.id) == true) {
-                banderae = true
-            } else {
-                elemento.style.border = "1px red solid"
-            }
-        }
-        if (elemento.id == 'fechaNacimiento') {
-            if (valFecha(elemento.id) == true) {
-                banderaf = true
-            } else {
-                elemento.style.border = "1px red solid"
-            }
-        }
+        elemento.style.border = '1px red solid'
+        bandera = false
+      }
     }
-    if (banderav == false && banderac == true && banderae == true && banderaf == true) {
-        bandera = true
+    if (!bandera) {
+      alert('Datos Incorrectos reviselos')
     }
-    console.log(bandera)
     return bandera
-}
+  }
+ 
 
 function valLetras(datos) {
     var na = document.getElementById(datos.id).value
@@ -221,8 +182,7 @@ function valCedula(valor) {
             document.getElementById('mensajeCedula').innerHTML = '<br>Último Digito Incorrecto'
         }
 
-        if (valp == true && valtd == true && valud == true) {
-        } else if (valp == false && valtd == false) {
+        if (valp == true && valtd == true && valud == true) {} else if (valp == false && valtd == false) {
             bandera = false;
             document.getElementById('mensajeCedula').innerHTML = '<br>Provincia (01-24) y Tercer Digito (0-5) Incorrectos'
         }
@@ -230,59 +190,23 @@ function valCedula(valor) {
     return bandera;
 }
 
-function valCorreo(valor) {
-    var correo = document.getElementById(valor).value.trim()
-    bandera = true
-    var lon = correo.length
-    var cm = '@ups.edu.ec'
-    var ce = '@est.ups.edu.ec'
-    var cont = 0
-    if (lon <= 70) {
-        var cm1 = correo.substr(lon - 11, lon - 1)
-        var ce1 = correo.substr(lon - 15, lon - 1)
-        if (cm1 == cm && lon >= 14) {
-            var us = correo.substr(0, lon - 11)
-            console.log(us)
-            for (var i = 0; i < us.length; i++) {
-                var n = us.substr(i).charCodeAt(0)
-                console.log(n)
-                if ((n >= 65 && n <= 90) || (n >= 97 && n <= 122) || (n >= 48 && n <= 57)) {
-                    document.getElementById('mensajeCorreo').innerHTML = ''
-                } else {
-                    cont++;
-                }
-                if (cont > 0) {
-                    bandera = false;
-                    document.getElementById('mensajeCorreo').innerHTML = 'Caracteres no son alfanumericos'
-                }
-            }
-        } else if (ce1 == ce && lon >= 18) {
-            var us = correo.substr(0, lon - 15)
-            console.log(us)
-            for (var i = 0; i < us.length; i++) {
-                var n = us.substr(i).charCodeAt(0)
-                console.log(n)
-                if ((n >= 65 && n <= 90) || (n >= 97 && n <= 122) || (n >= 48 && n <= 57)) {
-                    document.getElementById('mensajeCorreo').innerHTML = ''
-                } else {
-                    cont++;
-                }
-                if (cont > 0) {
-                    bandera = false;
-                    document.getElementById('mensajeCorreo').innerHTML = 'Caracteres no son alfanumericos'
-                }
-            }
+function validarCorreo(txt) {
+    f = txt.split('@');
+    if (f.length >= 2) {
+      if (f[0].length >= 1) {
+        if (f[1] == 'ups.edu.ec' || f[1] == 'est.ups.edu.ec') {
+          document.getElementById("mensajeCorreo").innerHTML = 'Correo correcto';
+          correo.style.borderColor = "blue";
         } else {
-            if (lon == 0) {
-                document.getElementById('mensajeCorreo').innerHTML = '<br>El correo esta vacío'
-            } else {
-                document.getElementById('mensajeCorreo').innerHTML = '<br>Fuera Requisitos - Tener 3 caracteres alfanumericos como minimo y finalizar(@est.ups.edu.ec / @ups.edu.ec)'
-                bandera = false
-            }
+          document.getElementById("mensajeCorreo").innerHTML = 'Incorrecto';
+          correo.style.borderColor = "red";
         }
+      } else {
+        document.getElementById("mensajeCorreo").innerHTML = 'Incorrecto';
+        correo.style.borderColor = "red";
+      }
     } else {
-        bandera = false;
-        document.getElementById('mensajeCorreo').innerHTML = '<br> El correo excede el tamaño establecido'
+      document.getElementById("mensajeCorreo").innerHTML = 'Incorrecto';
+      correo.style.borderColor = "red";
     }
-    return bandera;
-}
+  }

@@ -189,8 +189,7 @@ if ($usurol == 'empleado') {
                             <th>Monto de Credito</th>
                             <th>Tasa</th>
                             <th>Codigo de  Cliente</th>
-                            <th>Tipo de Garante</th>
-                            <th>Ver Detalles de Credito</th>
+                            <th>Ver Detalles</th>
                         </tr>
                         <?php
                         $sql = "SELECT * FROM bv_persona p, bv_cuenta c, bv_cliente cc ,bv_credito cr where p.per_id = cc.cli_persona and c.cli_id = cc.cli_id and cc.cli_id=cr.cli_id  and p.per_rol='usuario'";

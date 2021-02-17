@@ -20,15 +20,13 @@
     $proposito = $_GET["pcredito"];
     $monto = $_GET["cmonto"];
     $saldo = $_GET["csaldo"];
-    $templeado = $_GET["templeado"];
     $tasa = $_GET["ttasa"];
-    $cantidadcre = $_GET["cantidacre"];
-    $tipopersona = $_GET["tipopersona"]
+    $tipopersona = $_GET["tipopersona"];
     $tamort = $_GET["tamortizacion"];
     $cliente = $_GET["codigoclie"];
-    $frecuenca =$_GET["frecuencia"];
+    $frecuencia =$_GET["frecuencia"];
 
-    $sqlcrear = "INSERT INTO bv_poliza VALUES(null,$cantidadcre, $edad, '$vivienda', '$empleox', '$empleo','$proposito','$tamort',$meses,'$creditoh','$monto','$templeado',$tasa,'$valor','$activos',$cliente,$garantec,'$saldo','$cuentaes','$tgarante','P');";
+    $sqlcrear = "INSERT INTO bv_poliza VALUES(null,$creditoh,'$proposito',$saldo,'$tipopersona',$meses,'$frecuencia',$tasa,$monto,'FRANCESA',$cliente ,'P');";
     if ($conn->query($sqlcrear) === TRUE) {
 
         $sqlid = "SELECT bv_cliente.cli_persona from bv_cliente where bv_cliente.cli_id=$cliente;";

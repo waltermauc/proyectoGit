@@ -29,7 +29,7 @@ if ($usurol == 'admin') {
         <link rel="stylesheet" href="../../../css/accordion.css">
         <link rel="stylesheet" href="../../../css/social.css">
         <link rel="stylesheet" href="../../../css/social.css">
-        <script type="text/javascript" src="../../../js/validar.js"></script>
+        <script type="text/javascript" src="../controladores/js/validaciones.js"></script>
         <script src="../../../js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <!-- Le fav and touch icons -->
         <link rel="shortcut icon" href="../../images/ico/icon.png">

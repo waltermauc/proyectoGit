@@ -68,7 +68,7 @@ if ($usurol == 'usuario') {
                             <li class="active"><a href="calCredito.php">Crédito</a></li>
                             <li><a href="solicitud.php">Solicite una Polizas</a></li>
                             <li><a href="estadocuenta.php">Consulte su Cuenta</a></li>
-                            <li><a href="registrosaccesos.php">Consulta de registros de Polizas</a></li>
+                            <li><a href="registrosaccesos.php">Consulta de registros </a></li>
                             <li><a href="../../../config/cerrarSesion.php">Cerrar Sesion</a></li>
                             <div>
 
@@ -118,7 +118,7 @@ if ($usurol == 'usuario') {
                         while ($row = $result1->fetch_assoc()) {
                             $codigoCredito = $row["cli_id"];
                         }
-                        $sql = "SELECT * FROM bv_credito where cli_id=$codigoCredito AND cred_estado='A';";
+                        $sql = "SELECT * FROM bv_poliza where pol_codigopersona=$codigoui AND pol_estado='A';";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             $monto = 0;
@@ -126,10 +126,10 @@ if ($usurol == 'usuario') {
                             $plazo = 0;
                             $tipo = '';
                             while ($row = $result->fetch_assoc()) {
-                                $monto = $row["cred_monto"];
-                                $interes = $row["cred_tasa"];
-                                $plazo = $row["cred_meses"];
-                                $tipo = $row["cred_tipoa"];
+                                $monto = $row["pol_monto"];
+                                $interes = $row["pol_tasa"];
+                                $plazo = $row["pol_meses"];
+                                $tipo = $row["pol_tipo"];
                             }
                             //$f = new Date();
                             $dia = date("d");
@@ -157,7 +157,7 @@ if ($usurol == 'usuario') {
                                         $mes = $mes + 1;
                                     }
 
-                                    $tabla += "<tr>";
+                                    
                                     $intereses = round($capitalpendiente * $intRate * 100) / 100;
                                     $amortizacion = round(($cuota - $intereses) * 100) / 100;
                                     $capitalpendiente = round(($capitalpendiente - $amortizacion) * 100) / 100;

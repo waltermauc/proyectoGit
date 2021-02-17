@@ -157,7 +157,7 @@ if ($usurol == 'usuario') {
                         <li><a href="calCredito.php">Crédito</a></li>
                         <li><a href="solicitud.php">Solicite una Poliza</a></li>
                         <li><a href="estadocuenta.php">Consulte su Cuenta</a></li>
-                        <li><a href="registrosaccesos.php">Consulta de registros de polizas</a></li>
+                        <li><a href="registrosaccesos.php">Consulta de registros</a></li>
                         <li><a href="../../../config/cerrarSesion.php">Cerrar Sesion</a></li>
 
                         </ul>

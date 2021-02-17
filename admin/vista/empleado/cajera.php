@@ -116,7 +116,7 @@ $codigoempleado = $_GET["codigoempleado"];
                 <a id="logo" class="pull-left" href="index.html"></a>
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
-                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="indexcajero.php">Inicio</a></li>
                     <li class="active"><a href="cajera.php?codigoempleado=<?php echo "$codigoempleado";?>">TRANSFERENCIAS</a></li>     
                         <li><a href="../../../config/cerrarSesion.php">Cerrar Sesion</a></li>
                             </ul>
@@ -167,7 +167,7 @@ $codigoempleado = $_GET["codigoempleado"];
                         <script>
 
         function validart(){
-            var mont = document.getElementById('total').value;
+            var mont = document.getElementById('').value;
             var montra = document.getElementById('ValorRetiro').value;
             if(montra > mont){
                 alert('No se puede realisar esta transaccion');
@@ -177,7 +177,7 @@ $codigoempleado = $_GET["codigoempleado"];
         }
        </script>
                         <a href='index.php'><input type='button' value='Volver'></a>
-                        <input type="button" value="Retiro" onclick="return retiro()" />
+                        <input type="button" value="Retiro" onclick="return retiro()" onkeyup="validart()"/>
                         <input type="button" value="Deposito" onclick="return deposito()" />
                         <div id="opcion" class="error"></div>
 

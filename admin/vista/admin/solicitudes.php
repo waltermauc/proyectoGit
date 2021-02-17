@@ -186,26 +186,26 @@ if ($usurol == 'admin') {
                         </caption>
                         <tr>
                             <th>Codigo </th>
-                            <th>Tipo Amortizacion</th>
+                            <th>Tipo </th>
                             <th>Meses</th>
                             <th>Monto </th>
-                            <th>Tasa</th>
+                            <th>Frecuencia de Pago</th>
                             <th>Codigo de  Cliente</th>
                            
                             <th>Ver Detalles</th>
                         </tr>
                         <?php
-                        $sql = "SELECT * FROM bv_persona p, bv_cuenta c, bv_cliente cc ,bv_credito cr where p.per_id = cc.cli_persona and c.cli_id = cc.cli_id and cc.cli_id=cr.cli_id  and p.per_rol='usuario'";
+                        $sql = "SELECT * FROM bv_persona p, bv_cuenta c, bv_cliente cc ,bv_poliza pl where p.per_id = cc.cli_persona and c.cli_id = cc.cli_id and cc.cli_persona = pl.pol_codigopersona and p.per_rol='usuario';";
                         $result = $conn->query($sql);
                         if ($result->num_rows > 0) {
                             while ($row = $result->fetch_assoc()) {
-                                $codigo = $row["cred_id"];
-                                $tipoamort = $row["cred_tipoa"];
-                                $meses = $row["cred_meses"];
-                                $tasa = $row["cred_tasa"];
-                                $monto = $row["cred_monto"];
-                                $codigocli = $row["cli_id"];
-                                $tgarante = $row["cred_garantia"];
+                                $codigo = $row["pol_id"];
+                                $tipoamort = $row["pol_tipo"];
+                                $meses = $row["pol_meses"];
+                                $tasa = $row["pol_frecuencia"];
+                                $monto = $row["pol_monto"];
+                                $codigocli = $row["pol_codigopersona"];
+                                
                                 echo "<tr>";
                                 echo " <td>" . $codigo . "</td>";
                                 echo " <td>" . $tipoamort . "</td>";
@@ -214,10 +214,9 @@ if ($usurol == 'admin') {
                                 echo " <td>" . $monto . "</td>";
                                 echo " <td>" . $tasa . "</td>";
                                 echo " <td>" . $codigocli . "</td>";
-                                echo " <td>" . $tgarante . "</td>";
     
-                                echo " <td><a href=\"versolicitud.php?codigocre=$codigo'&codigocli='$codigocli\"><img height=\"30\" width=\"30\" src=\"../../../public/vista/images/det.png\"></a></td>";
-                                echo "</tr>";
+                                //echo " <td><a href=\"versolicitud.php?codigocre=$codigo'&codigocli='$codigocli\"><img height=\"30\" width=\"30\" src=\"../../../public/vista/images/det.png\"></a></td>";
+                                //echo "</tr>";
                             }
                         } else {
                             echo "<tr>";
